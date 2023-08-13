@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task View</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1 class="taskViewTask"><%=item.task %></h1>
+    <h2>Created by: <%=item.author %></h2>
+    <h3>Posted on: <%=item.created_at %></h3>
+    <form action="<%= `./${item.id}` %>" method="POST">
+      <button class="btn deleteBtn" type="submit">Delete</button>
+      <a href="/" class="btn">Home</a>
+    </form>
+    <%- include('footer') %>
+  </body>
+</html>

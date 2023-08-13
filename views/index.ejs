@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= day %> Task Board</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1><%= day %> Task Board</h1>
+    <div class="taskList">
+      <% tasks.forEach(function(item) { %>
+      <a href="<%= item.getURL() %>" class="taskContainer">
+        <p><%=item.task %></p>
+        <small>by: <%=item.author %><br /><%= item.getFormattedDate() %></small>
+      </a>
+      <% }); %>
+    </div>
+    <a href="/new" class="btn">New task</a>
+    <%- include('footer') %>
   </body>
 </html>

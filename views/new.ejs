@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Task</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Add a new task</h1>
+    <form action="new/" method="POST">
+      <label for="task">Task </label>
+      <textarea name="task" required maxlength="120"></textarea>
+      <br />
+      <label for="author">Author </label>
+      <input type="text" name="author" required maxlength="30" />
+      <br />
+      <button type="submit" class="btn confirmBtn">Confirm</button>
+      <a href="./" class="btn">Cancel</a>
+    </form>
+    <%- include('footer') %>
+  </body>
+</html>
